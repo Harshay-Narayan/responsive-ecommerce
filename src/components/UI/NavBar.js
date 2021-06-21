@@ -3,7 +3,6 @@ import cartIcon from "../../assets/cartIcon.svg";
 import classes from "./NavBar.module.css";
 import hamburger from "../../assets/hamburger.svg";
 import {useState} from 'react';
-import logo from '../../assets/logo.jpg'
 
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -37,7 +36,7 @@ const NavBar = () => {
 
     <nav className={classes.navbar}>
       <div className={classes.leftside}>
-        <img src={logo} alt="logo" className={classes.logo}/>
+        <p className={classes["logo-text"]}>Shopkart</p>
         <img src={hamburger} alt="error" className={classes["hamburger-image"]} onClick={hamburgerClickHandler}/>
       </div>
       <div className={`${!showLinks?classes.rightside:classes.rightsidelarge}`}>

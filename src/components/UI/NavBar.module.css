@@ -22,7 +22,7 @@
 .list li{
     margin: 5px 8px;
 } */
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .cart-image{
     width: 1.5em;
     height: 1.5em;
@@ -81,10 +81,12 @@ padding-left: 10px;
     align-items: center;
 }
 
-.logo{
-    width: 40px;
-    height: 40px;
+.logo-text{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: rgb(252, 255, 58);
 }
+
 
 @media screen and (max-width:600px) {
     .links a{
@@ -109,10 +111,15 @@ padding-left: 10px;
         display: flex;
         align-self: center;
     }
-.logo{
-    align-self: right;
 
-}
+    .rightside{
+        display: none;
+    }
 
-    
+    .leftside{
+        padding: 0 8px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
 }
