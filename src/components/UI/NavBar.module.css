@@ -1,43 +1,4 @@
-/* .header{
-    background-color: #5bccf6;
-    color:white;
-    height: 40px;
-}
-
-.list{
-    display: flex;
-    flex-direction: row-reverse;
-    list-style-type: none;   
-     
-}
-
-.list li:hover,
-.list li:active{
-    cursor: pointer;
-    text-decoration: underline;
-    color: #fcde67;
-    font-weight: 600;
-}
-
-.list li{
-    margin: 5px 8px;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-.cart-image{
-    width: 1.5em;
-    height: 1.5em;
-}
-
-.hamburger-image{
-    width: 1.5em;
-    height: 1.5em;
-    display: none;
-}
-
-.hamburger-image:hover{
-    cursor: pointer;
-}
-
 
 .navbar{
     background-color: #5bccf6;
@@ -69,12 +30,29 @@ padding-left: 10px;
     padding-right: 10px;
 }
 
-.links a:hover,.links a:active{
+.links a:hover,
+.links a:active{
     cursor: pointer;
     text-decoration: underline;
     color: #fcde67;
     font-weight: 600;
 }
+
+.cart-image{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.hamburger-image{
+    width: 1.5em;
+    height: 1.5em;
+    display: none;
+}
+
+.hamburger-image:hover{
+    cursor: pointer;
+}
+
 .rightsidelarge{
     display: flex;
     justify-content: center;
@@ -89,7 +67,10 @@ padding-left: 10px;
 
 
 @media screen and (max-width:600px) {
-    .links a{
+    /* .links a{
+        display: none;
+    } */
+    .rightside{
         display: none;
     }
     .hamburger-image{
@@ -99,21 +80,16 @@ padding-left: 10px;
     .rightsidelarge{
         position: absolute;
         top: 60px;
-        height: fit-content;
         width: 100%;
-        background-color: #030e12;
+        background-color:#a4e7ff; 
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /* justify-content: center; */
+        /* align-items: center; */
     }
     .rightsidelarge .links a{
         display: flex;
-        align-self: center;
-    }
-
-    .rightside{
-        display: none;
+        /* align-self: center; */
     }
 
     .leftside{

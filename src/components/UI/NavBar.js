@@ -18,22 +18,6 @@ const NavBar = () => {
     }
   }
   return (
-    // <header className={classes.header}>
-    //   <nav>
-    //     <ul className={classes.list}>
-    //       <li>
-    //         <img src={cartIcon} alt="error" className={classes["cart-image"]} />
-    //       </li>
-    //       <li>Contact</li>
-    //       <li>About</li>
-    //       <li>Product</li>
-    //       <li>Home</li>
-    //       <li><img src={hamburger} alt="error" className={classes["cart-image"]} /></li>
-    //     </ul>
-    //   </nav>
-
-    // </header>
-
     <nav className={classes.navbar}>
       <div className={classes.leftside}>
         <p className={classes["logo-text"]}>Shopkart</p>
