@@ -38,6 +38,7 @@ padding-left: 10px;
     font-weight: 600;
 }
 
+
 .cart-image{
     width: 1.5em;
     height: 1.5em;
@@ -81,7 +82,7 @@ padding-left: 10px;
         position: absolute;
         top: 60px;
         width: 100%;
-        background-color:#a4e7ff; 
+        background-color:#a4e7ffea; 
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
