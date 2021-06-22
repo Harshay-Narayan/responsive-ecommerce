@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <footer className={classes.footer}>
       <div className={classes["left-section"]}>
+        <p className={classes["list-heading"]}>policy</p>
         <ul>
-          <li className={classes["list-heading"]}>POLICY</li>
           <li>Return Policy</li>
           <li>Terms Of Use</li>
           <li>Security</li>
@@ -14,27 +14,36 @@ const Footer = () => {
           <li>Sitemap</li>
           <li>EPR Compliance</li>
         </ul>
-      </div><div className={classes["middle-section"]}>
+      </div>
+      <div className={classes["middle-section"]}>
+        <p className={classes["list-heading"]}>social</p>
         <ul>
-          <li className={classes["list-heading"]}>SOCIAL</li>
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <li>Youtube</li>
-        </ul>
-      </div><div className={classes["right-section"]}>
-        <ul>
-          <li className={classes["list-heading"]}>SOCIAL</li>
           <li>Facebook</li>
           <li>Twitter</li>
           <li>Youtube</li>
         </ul>
       </div>
-     <div className={classes.line}></div><div className={classes.foot}>
+      <div className={classes["right-section"]}>
+        <p className={classes["list-heading"]}>social</p>
         <ul>
-          <li className={classes["list-heading"]}>&copy; 2017-2021 Shopkart.com</li>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Youtube</li>
         </ul>
       </div>
+      <div className={classes["right-section"]}>
+        <p className={classes["list-heading"]}>social</p>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Youtube</li>
+        </ul>
+      </div>
+      <div className={classes.line}></div>
+      
+      <div className={classes.foot}>&copy; 2017-2021 Shopkart.com</div>
     </footer>
+    
   );
 };
 

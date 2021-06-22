@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .navbar{
-    background-color: #5bccf6;
+    background-color: #212121;
     color:white;
     height: 60px;
     display: flex;
@@ -63,7 +63,7 @@ padding-left: 10px;
 .logo-text{
     font-family: 'Pacifico', cursive;
     font-size: 30px;
-    color: rgb(252, 255, 58);
+    color:  #FF0266;
 }
 
 
@@ -82,7 +82,7 @@ padding-left: 10px;
         position: absolute;
         top: 60px;
         width: 100%;
-        background-color:#a4e7ffea; 
+        background-color:#212121cb; 
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
