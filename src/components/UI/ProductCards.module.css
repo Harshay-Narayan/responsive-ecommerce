@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:ital@0;1&display=swap');
+
+.product-card{
+    /* background-color:violet; */
+    padding: 1rem;
+    width: 12rem;
+    margin: 1rem;
+    transition: transform .5s ease-in-out;
+    text-align: center; 
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.product-image{
+    width: 10rem;
+    height: 10rem;
+}
+.product-name{
+    font-weight: 700;
+}
+.price,
+.price::before{
+    content: '$';
+    color: #388e3c;
+}
+
+
+.product-card:hover,
+.product-card:active{
+    transform: scale(1.05);
+    cursor: pointer;
+    border-bottom: 2px solid #FF2066;
+}
+
+
+
+@media screen and (max-width:480px) {
+    .product-card{
+        margin: 20px 0 0 0;
+        padding: .5rem;
+        width: 50%;
+    }
+}
+
