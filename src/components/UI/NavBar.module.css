@@ -22,6 +22,7 @@ padding-left: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    
 }
 
 .links a{
@@ -58,6 +59,7 @@ padding-left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 60;
 }
 
 .logo-text{

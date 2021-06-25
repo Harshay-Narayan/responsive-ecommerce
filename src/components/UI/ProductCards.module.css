@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:ital@0;1&display=swap');
 
 .product-card{
-    /* background-color:violet; */
     padding: 1rem;
     width: 12rem;
     margin: 1rem;
+    background-color: #f8f8f8;
     transition: transform .5s ease-in-out;
     text-align: center; 
     font-family: 'Poppins', sans-serif;
+    z-index: 10;    
 
 }
 
@@ -17,6 +18,11 @@
 }
 .product-name{
     font-weight: 700;
+    color: #878787;
+    font-size: small; 
+}
+.product-description{
+    font-size: 16px;
 }
 .price,
 .price::before{
@@ -29,7 +35,7 @@
 .product-card:active{
     transform: scale(1.05);
     cursor: pointer;
-    border-bottom: 2px solid #FF2066;
+    /* border-bottom: 2px solid #FF2066; */
 }
 
 
