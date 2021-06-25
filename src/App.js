@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Modal from "./components/UI/Modal";
 import Products from "./pages/Products";
+import CardModal from './components/Cart/CartModal'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Products/>
       </section>
       {/* <Footer/> */}
+      <CardModal />
     </React.Fragment>
   );
 }

@@ -1,0 +1,41 @@
+.cart-modal-container{
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 80%;
+    height: 80vh;
+    z-index: 80;
+    position: fixed;
+    top: calc(60px + (10vh / 2));
+    left:calc(20% / 2);
+    display: flex;
+}
+.image-container{
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.details-container{
+ flex: 60%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.main-image{
+    width: 18rem;
+    height: 18rem;
+}
+.old-price{
+    text-decoration: line-through;
+    color: rgb(135, 135, 135);
+    margin: 0 8px 0 8px;
+}
+.discount{
+    color: #26a541;
+}
+.warranty-text{
+    color: #878787;
+}
+.warranty{
+    margin: 0 0 0 20px;
+}

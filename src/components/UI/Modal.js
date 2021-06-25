@@ -23,12 +23,12 @@ const Modal = () => {
         <Backdrop />,
         document.getElementById("backdrop-root")
       )}
-      ;
+      
       {ReactDOM.createPortal(
         <Overlay />,
         document.getElementById("overlay-root")
       )}
-      ;
+      
     </React.Fragment>
   );
 };
