@@ -1,41 +1,108 @@
-.cart-modal-container{
-    background-color: white;
-    border: 1px solid #ccc;
-    width: 80%;
-    height: 80vh;
-    z-index: 80;
-    position: fixed;
-    top: calc(60px + (10vh / 2));
-    left:calc(20% / 2);
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.cart-modal-container {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 80%;
+  height: 80vh;
+  z-index: 80;
+  position: fixed;
+  top: calc(60px + (10vh / 2));
+  left: calc(20% / 2);
+  display: flex;
 }
-.image-container{
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.image-container {
+  flex: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.details-container{
- flex: 60%;
- display: flex;
- flex-direction: column;
- justify-content: center;
+.details-container {
+  flex: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  line-height: 2rem;
 }
-.main-image{
-    width: 18rem;
-    height: 18rem;
+.main-image {
+  width: 18rem;
+  height: 18rem;
 }
-.old-price{
-    text-decoration: line-through;
-    color: rgb(135, 135, 135);
-    margin: 0 8px 0 8px;
+.brand-name {
+  color: #878787;
 }
-.discount{
-    color: #26a541;
+.description {
+  line-height: normal;
 }
-.warranty-text{
-    color: #878787;
+.old-price {
+  text-decoration: line-through;
+  color: rgb(135, 135, 135);
+  margin: 0 8px 0 8px;
 }
-.warranty{
-    margin: 0 0 0 20px;
+.old-price::before {
+  content: "$";
 }
+.current-price::before {
+  content: "$";
+}
+.special-text {
+  color: #26a541;
+}
+.warranty-text {
+  color: #878787;
+}
+.warranty {
+  margin: 0 0 0 20px;
+}
+.stock-alert{
+  color: #ff6161;
+  font-family: 'Roboto', sans-serif;
+}
+.close,
+.close:hover {
+  width: 30px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.button {
+  border: none;
+  background-color: #ff2066;
+  color: #ccc;
+  height: 2rem;
+  width: 8rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 5px;
+  border-radius: 0;
+}
+.button:hover {
+  color: #fff;
+}
+.button:active {
+  color: #fff;
+  background-color: #e50053;
+  outline: 2px solid rgb(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 600px) {
+  .cart-modal-container{
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .main-image{
+    margin: 2rem 0 2rem 0;
+    width: 12rem;
+    height: 12rem;
+  }
+  
+}
+/* 
+@media screen and (max-height:1000px) {
+  .cart-modal-container{
+    height: 60vh;
+  }
+} */

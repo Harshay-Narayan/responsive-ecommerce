@@ -1,8 +1,8 @@
 import React from "react";
-import cartIcon from "../../assets/cartIcon.svg";
 import classes from "./NavBar.module.css";
 import hamburger from "../../assets/hamburger.svg";
 import {useState} from 'react';
+import CartIcon from '../svg/CartIcon'
 
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -30,7 +30,7 @@ const NavBar = () => {
           <a href="#">About</a>
           <a href="#">Contact</a>
           <a href="#">
-            <img src={cartIcon} alt="error" className={classes["cart-image"]} />
+           <div className={classes['cart-image']}><CartIcon /></div>
           </a>
         </div>
       </div>

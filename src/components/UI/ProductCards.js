@@ -1,14 +1,16 @@
 import React from "react";
 import classes from "./ProductCards.module.css";
-import watch from "../../assets/watch.jpg";
 
-const ProductCards = () => {
+
+
+const ProductCards = (props) => {
+  
   return (
-    <div className={classes["product-card"]}>
-      <img src={watch} className={classes["product-image"]} />
-      <p className={classes['product-name']}>Titan Watch</p>
-      <p className={classes['product-description']}>Watch for men</p>
-      <p className={classes.price}>25.99</p>
+    <div className={classes["product-card"]} onClick={props.onShowCartModal}>
+      <img src={props.image_location} className={classes["product-image"]} />
+      <p className={classes['product-name']}>{props.brand}</p>
+      <p className={classes['product-description']}>{props.name}</p>
+      <p className={classes.price}>{props.price}</p>
     </div>
   );
 };
