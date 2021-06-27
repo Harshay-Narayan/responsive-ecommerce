@@ -1,35 +1,33 @@
 import React from "react";
-import classes from "./CartModal.module.css";
-import watch from "../../assets/watch.jpg";
+import classes from "./ProductDetailsModal.module.css";
 import CloseIcon from "../svg/CloseIcon";
 
 const CartModal = (props) => {
   return (
     <div className={classes["cart-modal-container"]}>
       <div className={classes["image-container"]}>
-        <img src={watch} className={classes["main-image"]} />
+        <img src={props.image_location} className={classes["main-image"]} alt={props.brand}/>
       </div>
       <div className={classes["details-container"]}>
         <div className={classes.close} onClick={props.onClose}>
           <CloseIcon />
         </div>
-        <div className={classes["brand-name"]}>Titan Watch</div>
+        <div className={classes["brand-name"]}>{props.brand}</div>
         <div className={classes.description}>
-          LCS-8188 BLUE DIAL AND SILVER STRAP DAY & DATE FUNCTIONING WATCH FOR
-          BOYS Analog Watch - For Men
+          {props.description}
         </div>
         <div className={classes["special-text"]}>Special price</div>
         <div>
-          <span className={classes["current-price"]}>314</span>
-          <span className={classes["old-price"]}>1,799</span>
-          <span className={classes["special-text"]}>82% off</span>
+          <span className={classes["current-price"]}>{props.price}</span>
+          <span className={classes["old-price"]}>{props.old_price}</span>
+          <span className={classes["special-text"]}>{props.discount}% off</span>
         </div>
         <div>
           <span className={classes["warranty-text"]}>Warranty</span>
-          <span className={classes["warranty"]}>6 Months</span>
+          <span className={classes["warranty"]}>{props.warranty} Months</span>
         </div>
         <div className={classes['stock-alert']}>
-        Hurry, Only 9 left!
+        Hurry, Only {props.quantity} left!
         </div>
         <div>
           <button className={classes.button}>Add to Cart</button>

@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from "react";
+import { useState,useCallback } from "react";
 
 const useHttp = (applyData) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -16,12 +16,14 @@ const useHttp = (applyData) => {
       }
       const products = await response.json();
       applyData(products);
+      setIsLoading(false)
+      setHasError(false);
     } catch (error) {
       setIsLoading(false);
       setHasError(error);
       console.log(error.message || "Something went wrong!");
     }
-  },[]);
+  },[applyData]);
   console.log("requesting")
   return { isLoading, hasError, sendRequest };
 };
