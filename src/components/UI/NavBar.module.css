@@ -3,7 +3,7 @@
 .navbar{
     background-color: #212121;
     color:white;
-    height: 60px;
+    height: 4rem;
     display: flex;
     
 }
@@ -35,7 +35,7 @@ padding-left: 10px;
 .links a:active{
     cursor: pointer;
     text-decoration: underline;
-    color: #fcde67;
+    color: #FF0266;
     font-weight: 600;
 }
 

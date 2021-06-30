@@ -3,6 +3,7 @@ import classes from "./NavBar.module.css";
 import hamburger from "../../assets/hamburger.svg";
 import {useState} from 'react';
 import CartIcon from '../svg/CartIcon'
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -25,13 +26,13 @@ const NavBar = () => {
       </div>
       <div className={`${!showLinks?classes.rightside:classes.rightsidelarge}`}>
         <div className={classes.links}>
-          <a href="#">Home</a>
-          <a href="#">Product</a>
+          <Link to="/">Home</Link>
+          <a href="/products">Product</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
-          <a href="#">
+          <Link to="/cart">
            <div className={classes['cart-image']}><CartIcon /></div>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
