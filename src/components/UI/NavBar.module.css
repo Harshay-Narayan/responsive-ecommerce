@@ -32,14 +32,18 @@ padding-left: 10px;
 }
 
 .links a:hover,
-.links a:active{
+.links a:active,
+.links a.active{
     cursor: pointer;
     text-decoration: underline;
     color: #FF0266;
     font-weight: 600;
 }
 
-
+/* .active{
+    font-size: 50px;
+ color: yellow;
+} */
 .cart-image{
     
     width: 1.5em;

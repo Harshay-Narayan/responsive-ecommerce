@@ -13,6 +13,7 @@ const Cart = () => {
         <div className={classes["image-container"]}>
           <img src="/product-images/watch.jpg" alt="Product" />
         </div>
+        <div>Titan</div>
         <div>ADIDAS Elate M Running Shoes For Men</div>
         <div className={classes.prices}>
           <span className={classes["current-price"]}>709</span>
@@ -34,6 +35,7 @@ const Cart = () => {
         <div className={classes["image-container"]}>
           <img src="/product-images/watch.jpg" alt="Product" />
         </div>
+        <div>Titan</div>
         <div>ADIDAS Elate M Running Shoes For Men</div>
         <div className={classes.prices}>
           <span className={classes["current-price"]}>709</span>
