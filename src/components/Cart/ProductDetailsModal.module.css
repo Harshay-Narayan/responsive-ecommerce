@@ -78,6 +78,13 @@
   font-size: 1rem;
   padding: 5px;
   border-radius: 0;
+  cursor: pointer;
+}
+
+.disabled{
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
 }
 .button:hover {
   color: #fff;
@@ -86,6 +93,20 @@
   color: #fff;
   background-color: #e50053;
   outline: 2px solid rgb(0, 0, 0, 0.5);
+}
+
+.success-text{
+  display: inline;
+  margin-left: 1rem;
+  color: #26a541;
+}
+
+.check-mark{
+  border: 2px solid #26a541;
+  padding: 0 3px 0 3px;
+  border-radius: 50%;
+  color: #26a541;
+  margin-right: 4px;
 }
 
 @media screen and (max-width: 600px) {
@@ -98,6 +119,10 @@
     margin: 2rem 0 2rem 0;
     width: 12rem;
     height: 12rem;
+  }
+  .success-text{
+    display: block;
+    margin: 5px 0 0 0;
   }
   
 }

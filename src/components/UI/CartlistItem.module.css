@@ -1,0 +1,67 @@
+.product-list-items {
+  border-bottom: 1.5px dashed #f0f0f0;
+}
+.image-container img {
+  width: 7rem;
+  height: 7rem;
+  float: left;
+  margin: 10px 15px 10px 15px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: rgb(135, 135, 135);
+  margin: 0 10px 0 10px;
+}
+.old-price::before {
+  content: "$";
+}
+.discount {
+  color: #26a541;
+}
+
+.discount::after{
+    content: '%';
+}
+
+.current-price::before {
+  content: "$";
+}
+
+.cart-footer {
+  display: flex;
+  clear: both;
+  margin: 0 0 10px 5px;
+}
+
+.form-control-button,
+.form-control-button:hover {
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: none;
+  color: #fff;
+  margin: 0 5px 0 5px;
+  background-color: #ff2066;
+  cursor: pointer;
+  text-align: center;
+}
+
+.remove {
+  margin: 0 0 0 3rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.remove:hover {
+  color: #ff2066;
+  cursor: pointer;
+}
+
+.input,
+.input:active {
+  width: 5rem;
+  height: 1.5rem;
+  border: 1px solid #ff2066;
+  outline: none;
+  text-align: center;
+}

@@ -7,6 +7,12 @@ const ProductDetailsModal = (props) => {
   const cartCtx = useContext(CartContext);
   const [disableButtonState, setDisableButtonState] = useState(false);
   const addThisProductToCart = () => {
+    // let cartProducts=cartCtx.products;
+    // for(let i=0;i<cartProducts.length;i++){
+    //   if (cartProducts[i].product_id === props.id) {
+    //     return;
+    //   }
+    // } 
     cartCtx.addToCart({
       product_id: props.id,
       product_brand: props.brand,
@@ -15,15 +21,16 @@ const ProductDetailsModal = (props) => {
       product_current_price: props.price,
       product_old_price: props.old_price,
       product_discount: props.discount,
+      product_image_location:props.image_location
     });
   };
 
   useEffect(() => {
     let cartProducts = cartCtx.products;
     for (let i = 0; i < cartProducts.length; i++) {
-      if(cartProducts[i].product_id===props.id){
+      if (cartProducts[i].product_id === props.id) {
         setDisableButtonState(true);
-      };
+      }
     }
   }, [cartCtx.products]);
 
@@ -55,14 +62,11 @@ const ProductDetailsModal = (props) => {
         <div className={classes["stock-alert"]}>
           Hurry, Only {props.quantity} left!
         </div>
-        <div>
-          {!disableButtonState ? (
-            <button className={classes.button} onClick={addThisProductToCart}>
+        <div>      
+            <button className={`${classes.button} ${disableButtonState&&classes.disabled}`} onClick={addThisProductToCart} disabled={disableButtonState}>
               Add to Cart
             </button>
-          ) : (
-            "Added"
-          )}
+            {disableButtonState && <div className={classes['success-text']}><span className={classes['check-mark']}>✔</span>Product added to Cart !</div>}
         </div>
       </div>
     </div>
