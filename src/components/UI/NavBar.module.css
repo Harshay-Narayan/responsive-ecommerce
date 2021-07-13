@@ -5,7 +5,9 @@
     color:white;
     height: 4rem;
     display: flex;
-    
+    position: sticky;
+    top: 0;
+    z-index: 20;
 }
 .leftside{
 flex: 50%;
@@ -62,6 +64,7 @@ padding-left: 10px;
 }
 
 .rightsidelarge{
+    flex: 50%;
     display: flex;
     justify-content: center;
     align-items: center;

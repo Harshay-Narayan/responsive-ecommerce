@@ -5,9 +5,9 @@ const CartContext = React.createContext({
     totalAmount:0,
     totalDiscountAmount:0,
     totalDeliveryCharges:0,
-    // isAddToCartButtonDisabled:false,
     addToCart:(product)=>{},
     removeFromCart:(product_id)=>{},
+    changeQuantity:()=>{},
     clearCart:()=>{}
 })
 

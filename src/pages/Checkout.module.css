@@ -1,0 +1,70 @@
+.main-container {
+  min-height: 50vh;
+}
+
+.checkout-form-container {
+  background-color: wheat;
+  width: 40%;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px #000;
+}
+
+.input {
+  width: 90%;
+  margin: 0 0 10px calc(10% / 2);
+}
+
+.invalid {
+  background-color: rgba(255, 0, 0, 0.384);
+}
+
+.label {
+  margin: 0 0 0 calc(10% / 2);
+}
+
+.select {
+  margin: 0 0 10px calc(10% / 2);
+}
+
+.heading-text {
+  text-align: center;
+  margin: 0 0 0 calc(10% / 2);
+  color: #ff2066;
+  font-weight: 900;
+}
+
+.button {
+  margin: 20px 0 20px calc(10% / 2);
+  border: none;
+  height: 2rem;
+  width: 90%;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #ff2066;
+}
+
+.button:hover,
+.button.active {
+  cursor: pointer;
+  background-color: #f71a60;
+}
+.error-message{
+    color:red;
+    margin: 0 0 0 calc(10% / 2);
+}
+
+.order-placed-message{
+    color: #ff2066;
+    text-align: center;
+    margin-top: 30vh;
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+@media screen and (max-width:800px) {
+    .checkout-form-container{
+        width: 90%;
+    }
+}

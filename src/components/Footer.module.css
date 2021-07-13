@@ -4,15 +4,13 @@
   flex-wrap: wrap;
   background-color: black;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  
+  position: relative;
+  /* margin-top: 20px; */
 }
 
 .left-section {
   padding: 10px;
   font-size: 12px;
-  
 }
 
 .middle-section {
@@ -63,6 +61,11 @@
   width: 90vw;
   background-color: #FF0266;
   border: none;
+}
+
+.icon{
+ display: flex;
+ align-items: center;
 }
 /* 
 @media screen and (max-width: 600px) {

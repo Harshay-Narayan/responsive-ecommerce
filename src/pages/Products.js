@@ -5,10 +5,12 @@ import useHttp from "../customHooks/use-http";
 import ProductDetailsModal from "../components/Cart/ProductDetailsModal";
 import ProductHeader from "../components/UI/ProductHeader";
 import Spinner from "../components/UI/Spinner";
+import Footer from "../components/Footer";
 
 const Products = () => {
   const [showProductDetailsModal, setShowProductDetailsModal] = useState(null);
   const [productList, setProductList] = useState([]);
+  const [filteredList,setFilteredListState]=useState([...productList]);
 
   const showProductDetailsModalHandler = (currentProductObject) => {
     setShowProductDetailsModal(currentProductObject);
@@ -40,6 +42,7 @@ const Products = () => {
     }
 
     setProductList(products_array);
+    setFilteredListState(products_array);
   }, []);
 
   const { isLoading, hasError, sendRequest } = useHttp(transformData);
@@ -51,9 +54,24 @@ const Products = () => {
     });
   }, [sendRequest]);
 
+  const getCategoryHandler=(category)=>{
+    let updatedProductList=[];
+    if(category==='All'){
+      const updatedProductList = [...productList];
+      setFilteredListState(updatedProductList)
+    }
+    else{
+      const temp_array=[...productList]
+      updatedProductList = temp_array.filter(product=>product.product_category===category);
+     setFilteredListState(updatedProductList)
+    }
+    console.log(productList)
+   
+  }
+
   return (
     <React.Fragment>
-      <ProductHeader />
+      <ProductHeader getCategory={getCategoryHandler}/>
       {showProductDetailsModal && (
         <ProductDetailsModal
           onClose={cancelHandler}
@@ -61,7 +79,7 @@ const Products = () => {
           brand={showProductDetailsModal.brand}
           description={showProductDetailsModal.description}
           price={showProductDetailsModal.price}
-          old_price={showProductDetailsModal.price}
+          old_price={showProductDetailsModal.old_price}
           image_location={showProductDetailsModal.image_location}
           discount={showProductDetailsModal.discount}
           warranty={showProductDetailsModal.warranty}
@@ -69,9 +87,10 @@ const Products = () => {
           delivery_charges={showProductDetailsModal.delivery_charges}
         />
       )}
+      <div className={classes.container}>
       {!isLoading && !hasError && (
         <div className={classes["products"]}>
-          {productList.map((products) => {
+          {filteredList.map((products) => {
             return (
               <ProductCards
                 onShowProductDetailsModal={showProductDetailsModalHandler}
@@ -92,12 +111,14 @@ const Products = () => {
           })}
         </div>
       )}
+      </div>
       {isLoading && <Spinner />}
       {!isLoading && hasError && (
         <p style={{ color: "#B00020", textAlign: "center" }}>
           Oops, Something went wrong
         </p>
       )}
+      <Footer/>
     </React.Fragment>
   );
 };

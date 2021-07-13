@@ -10,6 +10,7 @@
   top: calc(60px + (10vh / 2));
   left: calc(20% / 2);
   display: flex;
+  border-radius: 5px;
 }
 .image-container {
   flex: 40%;
@@ -89,11 +90,11 @@
 .button:hover {
   color: #fff;
 }
-.button:active {
+/* .button:active {
   color: #fff;
   background-color: #e50053;
   outline: 2px solid rgb(0, 0, 0, 0.5);
-}
+} */
 
 .success-text{
   display: inline;
@@ -113,6 +114,7 @@
   .cart-modal-container{
     height: auto;
     flex-direction: column;
+    top: calc(50px + (10vh / 2));
   }
   
   .main-image{
@@ -126,9 +128,9 @@
   }
   
 }
-/* 
-@media screen and (max-height:1000px) {
+
+/* @media screen and (max-height:1000px) {
   .cart-modal-container{
-    height: 60vh;
+    top: calc(50px + (10vh / 2));
   }
 } */

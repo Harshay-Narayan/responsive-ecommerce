@@ -26,13 +26,13 @@ const NavBar = () => {
       </div>
       <div className={`${!showLinks?classes.rightside:classes.rightsidelarge}`}>
         <div className={classes.links}>
-          <NavLink to="/home" activeClassName={classes.active}>Home</NavLink>
-          <NavLink to="/products" activeClassName={classes.active}>Product</NavLink>
+          <NavLink to="/home" activeClassName={classes.active} onClick={hamburgerClickHandler}>Home</NavLink>
+          <NavLink to="/products" activeClassName={classes.active} onClick={hamburgerClickHandler}>Product</NavLink>
           <a href="#">About</a>
           <a href="#">Contact</a>
-          <Link to="/cart">
+          <NavLink to="/cart" onClick={hamburgerClickHandler}>
            <div className={classes['cart-image']}><CartIcon /></div>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </nav>

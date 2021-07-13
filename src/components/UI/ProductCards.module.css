@@ -2,14 +2,14 @@
 
 .product-card{
     padding: 1rem;
-    width: 12rem;
-    margin: 1rem;
+    /* width: 12rem;
+    margin: 1rem; */
     background-color: #f8f8f8;
     transition: transform .5s ease-in-out;
     text-align: center; 
     font-family: 'Poppins', sans-serif;
     z-index: 10;    
-
+    border-radius: 2%;   
 }
 
 .product-image{
@@ -35,7 +35,8 @@
 .product-card:active{
     transform: scale(1.05);
     cursor: pointer;
-    /* border-bottom: 2px solid #FF2066; */
+    box-shadow: 0 2px 8px #ff2066;
+    /* border: 1px solid #ff2206; */
 }
 
 
@@ -44,7 +45,7 @@
     .product-card{
         margin: 20px 0 0 0;
         padding: .5rem;
-        width: 50%;
+        width: 60%;
     }
 }
 

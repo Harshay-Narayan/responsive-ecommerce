@@ -21,8 +21,12 @@ const ProductDetailsModal = (props) => {
       product_current_price: props.price,
       product_old_price: props.old_price,
       product_discount: props.discount,
-      product_image_location:props.image_location
+      product_image_location:props.image_location,
+      product_stock_quantity:props.quantity,
+      product_quantity_in_cart:1
     });
+
+    
   };
 
   useEffect(() => {
