@@ -3,21 +3,15 @@ import classes from "./NavBar.module.css";
 import hamburger from "../../assets/hamburger.svg";
 import {useState} from 'react';
 import CartIcon from '../svg/CartIcon'
-import { Link,NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const [showLinks, setShowLinks] = useState(false);
   
   const hamburgerClickHandler=()=>{
-    if(showLinks){
-      setShowLinks(false);
-      console.log("set false");  
-    }
-    else{
-      setShowLinks(true);
-      console.log("set true")  
-    }
+    setShowLinks(showLinks=>!showLinks)
   }
+  
   return (
     <nav className={classes.navbar}>
       <div className={classes.leftside}>

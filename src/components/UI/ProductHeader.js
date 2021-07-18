@@ -6,19 +6,16 @@ const ProductHeader = (props) => {
 const [categoryList, setCategoryList] = useState([])
 
   const storeCategories = useCallback((categories)=>{
-    console.log(categories)
     const category_array = []
     for(const keys in categories){
       category_array.push(categories[keys])
     }
-    console.log(category_array)
     setCategoryList(category_array)
   },[]);
   const {isLoading,hasError,sendRequest} = useHttp(storeCategories);
-  // const fetchCategories=()=>{
-    
-  // }
+
   useEffect(() => {
+    console.log("Category Fetching")
     sendRequest({url:'https://responsive-react-ecommerce-default-rtdb.firebaseio.com/categories.json'})
   }, [sendRequest])
 
@@ -35,9 +32,11 @@ const [categoryList, setCategoryList] = useState([])
             alt="issue"
           />
           <div className={classes["category-list"]}>
-            <ul>
-              {categoryList.map((cat)=>{ return <li onClick={selectCategoryHandler.bind(null,cat)}>{cat}</li>})}
+            {isLoading && !hasError?<ul><li>...Loading</li></ul>:<ul>
+              {categoryList.map((cat)=>{ return <li onClick={selectCategoryHandler.bind(null,cat)} key={cat}>{cat}</li>})}
             </ul>
+            }
+             {(!isLoading&&hasError)&&<ul><li style={{color:'green'}}>!Error Loading Categories!</li></ul>}
           </div>
         </div>
       </div>

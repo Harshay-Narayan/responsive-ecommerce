@@ -3,7 +3,7 @@
 }
 
 .checkout-form-container {
-  background-color: wheat;
+  background-color: rgb(252, 245, 245);
   width: 40%;
   margin: 20px auto 20px auto;
   padding: 10px;
@@ -14,10 +14,12 @@
 .input {
   width: 90%;
   margin: 0 0 10px calc(10% / 2);
+  border-radius: 4px;
+  border: 1px solid #000;
 }
 
 .invalid {
-  background-color: rgba(255, 0, 0, 0.384);
+  background-color: #b0002056;
 }
 
 .label {

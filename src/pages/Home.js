@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <div className={classes["main-container"]}>
-        <img src="https://source.unsplash.com/1600x900/?shopping,ecommerce" />
+        <img src="https://source.unsplash.com/1600x900/?shopping,ecommerce" alt="home"/>
       </div>
       <Footer />
     </React.Fragment>

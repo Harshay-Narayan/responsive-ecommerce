@@ -38,9 +38,7 @@ const Products = () => {
         product_image_location: products[key].image_location,
         product_delivery_charges: products[key].delivery_charges,
       });
-      console.log(products_array);
     }
-
     setProductList(products_array);
     setFilteredListState(products_array);
   }, []);
@@ -48,7 +46,7 @@ const Products = () => {
   const { isLoading, hasError, sendRequest } = useHttp(transformData);
 
   useEffect(() => {
-    console.log("Use Effect Executed");
+    console.log("Products Fetching");
     sendRequest({
       url: "https://responsive-react-ecommerce-default-rtdb.firebaseio.com/products.json",
     });
@@ -65,7 +63,6 @@ const Products = () => {
       updatedProductList = temp_array.filter(product=>product.product_category===category);
      setFilteredListState(updatedProductList)
     }
-    console.log(productList)
    
   }
 
@@ -123,4 +120,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default React.memo(Products);

@@ -1,19 +1,17 @@
 import React,{useContext} from "react";
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Footer from "../components/Footer";
 import CartlistItem from "../components/UI/CartlistItem";
 import CartSubtotal from "../components/UI/CartSubtotal";
 import CartContext from "../store/cart-context";
 import classes from "./Cart.module.css";
-import Checkout from "./Checkout";
 
-const Cart = () => {
+const Cart = (props) => {
   const cartCtx = useContext(CartContext);
+  // let cartProductsLength = cartCtx.products.length;
+  // props.getLength(cartProductsLength)
   let cartProducts = cartCtx.products;
-  // console.log(cartProducts.length)
-  // console.log(cartCtx.totalAmount)
-  // console.log((cartCtx.totalDiscountAmount.toFixed(0)))
-  // console.log(cartCtx.totalDeliveryCharges)
+
   if(cartProducts.length>0){
   return (
     <React.Fragment>
@@ -36,10 +34,8 @@ const Cart = () => {
           />
           })
         }
-          {/* <Route path="cart/checkout">
-              <Checkout />
-            </Route> */}
-
+         
+           
         <div className={classes["place-order-section"]}>
           <Link to='cart/checkout'><button className={classes["order-button"]}>Place Order</button></Link>
         </div>
@@ -47,7 +43,10 @@ const Cart = () => {
 
       <CartSubtotal/>
     </div></div>
+    
+   
     <Footer/></React.Fragment>
+    
   );
 }
 else{

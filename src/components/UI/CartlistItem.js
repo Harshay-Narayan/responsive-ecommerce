@@ -1,18 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 import classes from "./CartlistItem.module.css";
+import Modal from './Modal'
 
 const CartlistItem = (props) => {
   const cartCtx = useContext(CartContext);
+  const [showRemoveItemModal,setShowRemoveItemModal] = useState(false)
   const removerThisProductFromCart = () => {
     cartCtx.removeFromCart(props.id);
   };
+
+  const removeItemHandler=()=>{
+    setShowRemoveItemModal(showRemoveItemModal=>!showRemoveItemModal)
+  }
+
+
   const changeTheQuantity=(operator)=>{
     cartCtx.changeQuantity(operator,props.id)
   }
   const index = cartCtx.products.findIndex(product=>product.product_id===props.id)
   const quantityInCart = cartCtx.products[index].product_quantity_in_cart
   return (
+    <React.Fragment>
     <div className={classes["product-list-items"]}>
       <div className={classes["image-container"]}>
         <img src={props.image_location} alt="Product" />
@@ -27,21 +36,16 @@ const CartlistItem = (props) => {
       <div className={classes["cart-footer"]}>
         <div>
           <button className={classes["form-control-button"]} onClick={changeTheQuantity.bind(null,'decrease')}>-</button>
-          {/* <input
-            type="number"
-            max="5"
-            min="0"
-            defaultValue="1"
-            className={classes.input}
-          /> */}
           <div className={classes.label}>{quantityInCart}</div>
           <button className={classes["form-control-button"]} onClick={changeTheQuantity.bind(null,'increase')}>+</button>
         </div>
-        <div className={classes.remove} onClick={removerThisProductFromCart}>
+        <div className={classes.remove} onClick={removeItemHandler}>
           remove
         </div>
       </div>
     </div>
+    {showRemoveItemModal && <Modal toggleRemoveItem={removeItemHandler} heading={'Remove Item From Cart'} content={`Are you sure, you want to remove ${props.description} from Cart`} onConfirm={removerThisProductFromCart}/>}
+    </React.Fragment>
   );
 };
 

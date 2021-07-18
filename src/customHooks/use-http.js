@@ -24,7 +24,6 @@ const useHttp = (applyData) => {
       console.log(error.message || "Something went wrong!");
     }
   },[applyData]);
-  console.log("requesting")
   return { isLoading, hasError, sendRequest };
 };
 

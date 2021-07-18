@@ -6,13 +6,19 @@ import CartContext from "../../store/cart-context";
 const ProductDetailsModal = (props) => {
   const cartCtx = useContext(CartContext);
   const [disableButtonState, setDisableButtonState] = useState(false);
+
+  useEffect(() => {
+    console.log("ProductDetailsModal useEffect Running")
+    let cartProducts = cartCtx.products;
+    for (let i = 0; i < cartProducts.length; i++) {
+      if (cartProducts[i].product_id === props.id) {
+        setDisableButtonState(true);
+      }
+    }
+  }, [cartCtx.products,props.id]);
+
+
   const addThisProductToCart = () => {
-    // let cartProducts=cartCtx.products;
-    // for(let i=0;i<cartProducts.length;i++){
-    //   if (cartProducts[i].product_id === props.id) {
-    //     return;
-    //   }
-    // } 
     cartCtx.addToCart({
       product_id: props.id,
       product_brand: props.brand,
@@ -25,18 +31,9 @@ const ProductDetailsModal = (props) => {
       product_stock_quantity:props.quantity,
       product_quantity_in_cart:1
     });
-
-    
   };
 
-  useEffect(() => {
-    let cartProducts = cartCtx.products;
-    for (let i = 0; i < cartProducts.length; i++) {
-      if (cartProducts[i].product_id === props.id) {
-        setDisableButtonState(true);
-      }
-    }
-  }, [cartCtx.products]);
+  
 
   return (
     <div className={classes["cart-modal-container"]}>
